@@ -1,0 +1,20 @@
+; BIND reverse data file for informatica
+;
+$TTL	86400
+@	IN	SOA	informatica.com. root.informatica.com. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			  86400 )	; Negative Cache TTL
+;
+@	IN	NS	servidor-primari.
+@	IN	NS	servidor-secundari.
+1.76	IN	PTR	informatica.com.
+1.176	IN	PTR	informatica.com.
+2.76	IN	PTR	informatica.com.
+2.176	IN	PTR	informatica.com.
+1.76	IN	PTR	servidor-primari
+1.176	IN	PTR	servidor-primari
+2.76	IN	PTR	servidor-secundari
+2.176	IN	PTR	servidor-secundari
