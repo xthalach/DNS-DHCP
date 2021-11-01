@@ -10,7 +10,7 @@ options {
         // Uncomment the following block, and insert the addresses replacing
         // the all-0's placeholder.
 
-        allow-query {192.168.1.0/24;192.168.76.0/24;192.168.176.0/24;};
+        // allow-query {192.168.1.0/24;192.168.76.0/24;192.168.176.0/24;};
 
         forward only;
 
