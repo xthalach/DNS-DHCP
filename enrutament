@@ -1,0 +1,24 @@
+#!/bin/sh
+case "$1" in
+start)
+printf "Aplicant les regles iptables\n"
+printf "Aplicant l'enrutament...\n"
+exec /usr/sbin/activar_enrutament
+;;
+stop)
+printf "Aplicant les regles iptables\n"
+printf "Desactivant l'enrutament...\n"
+exec /usr/sbin/desactivar_enrutament
+;;
+restart)
+printf "Aplicant les regles iptables\n"
+printf "Reiniciant l'enrutament...\n"
+exec /usr/sbin/desactivar_enrutament
+exec /usr/sbin/activar_enrutament
+;;
+*)
+printf "Utilització $0 {start|stop|restart}\n"
+exit 1
+;;
+esac
+exit 0
