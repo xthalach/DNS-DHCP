@@ -1,0 +1,54 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+
+// Zones principals
+
+zone "informatica.com"{
+	type master;
+	file "/etc/bind/db.informatica.hosts";
+	also-notify {192.168.76.2;};
+	notify yes;
+};
+
+zone "168.192.in-addr.arpa"{
+	type master;
+	file "/etc/bind/192.168.rev";
+	also-notify {192.168.76.2;};
+	notify yes;
+};
+
+// Sub dominis
+
+zone "asix2.informatica.com"{
+	type master;
+	file "/etc/bind/asix2/db.asix2.hosts";
+	also-notify {192.168.76.2;};
+	notify yes;
+};
+
+zone "76.168.192.in-addr.arpa"{
+	type master;
+	file "/etc/bind/asix2/192.168.76.rev";
+	also-notify {192.168.76.2;};
+	notify yes;
+};
+
+zone "dam2.informatica.com"{
+	type master;
+	file "/etc/bind/dam2/db.dam2.hosts";
+	also-notify {192.168.76.2;};
+	notify yes;
+};
+
+zone "176.168.192.in-addr.arpa"{
+	type master;
+	file "/etc/bind/dam2/192.168.176.rev";
+	also-notify {192.168.76.2;};
+	notify yes;
+};
