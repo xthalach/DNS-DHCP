@@ -1,0 +1,20 @@
+;
+; BIND data file for local loopback asix2.informatica.com
+;
+$TTL	604800
+asix2.informatica.com.	IN	SOA	servidor-primari.asix2.informatica.com. root.asix2.informatica.com. (
+			      3		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+asix2.informatica.com.	IN	NS	servidor-primari.
+asix2.informatica.com.	IN	NS	servidor-secundari.
+asix2.informatica.com.	IN	A	192.168.76.1
+asix2.informatica.com.	IN	A	192.168.76.2
+servidor-secundari	    IN	A	192.168.76.2
+servidor-primari	      IN	A	192.168.76.1
+client-linux	        	IN	A	192.168.76.10
+pc-yoda		             	IN	A	192.168.76.11
+www			IN	CNAME	servidor-primari
