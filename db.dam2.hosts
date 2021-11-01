@@ -1,0 +1,19 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+dam2.informatica.com.	IN	SOA	servidor-primari.dam2.informatica.com. root.dam2.informatica.com. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+dam2.informatica.com.	IN	NS  	servidor-primari.dam2.informatica.com.
+dam2.informatica.com.	IN	NS   	servidor-secundari.dam2.informatia.com.
+dam2.informatica.com.	IN	A	    192.168.176.1
+dam2.informatica.com.	IN	A   	192.168.176.2
+servidor-primari	    IN	A	    192.168.176.1
+servidor-secundari  	IN	A    	192.168.176.2
+client-windows	    	IN	A	    192.168.176.10
+www			              IN	CNAME	servidor-primari
